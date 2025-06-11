@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
+import CurrencyDropdown from './CurrencyDropdown';
+import { SiConvertio } from "react-icons/si";
 
 function Currency() {
   const [rates, setRates] = useState({});
@@ -30,10 +32,10 @@ function Currency() {
     const rate = rates[targetCurrency] / rates[baseCurrency];
 
     if (lastChanged === 'base') {
-      setTargetAmount((baseAmount * rate).toFixed(2));
+      setTargetAmount(Number((baseAmount * rate).toFixed(2)));
     } else {
       const reverseRate = rates[baseCurrency] / rates[targetCurrency];
-      setBaseAmount((targetAmount * reverseRate).toFixed(2));
+      setBaseAmount(Number((targetAmount * reverseRate).toFixed(2)));
     }
   }, [baseAmount, targetAmount, baseCurrency, targetCurrency, rates, lastChanged]);
 
@@ -45,9 +47,9 @@ function Currency() {
 
       <div className='min-h-screen flex items-center justify-center'>
         <div className='w-[400px] h-[400px] bg-gray-200 rounded-lg shadow-2xl flex items-center justify-evenly flex-col bg-cover bg-center' 
-          style={{ backgroundImage: `url('/src/assets/dbg1.svg')` }}
+          style={{ backgroundImage: `url('src/assets/dbg1.svg')` }}
           >
-          <div className='bg-black text-white rounded-xl p-2'>
+          <div className='bg-black text-white rounded-xl p-2 flex items-center justify-center flex-row'>
             <input
               className='px-2 me-2 focus:outline-none'
               type="number"
@@ -58,24 +60,16 @@ function Currency() {
               }}
             />
 
-            <select
+            <CurrencyDropdown
               value={baseCurrency}
-              className='bg-black max-h-32 overflow-y-auto border border-gray-300 rounded px-3 py-2'
-              onChange={(e) => {
-                setBaseCurrency(e.target.value);
-                // Ensure the lastChanged stays relevant
-                if (lastChanged === 'target') {
-                  setTargetAmount((targetAmount * rates[e.target.value] / rates[baseCurrency]).toFixed(2));
-                }
-              }}
-            >
-              {Object.keys(rates).map((currency) => (
-                <option key={currency} value={currency}>{currency}</option>
-              ))}
-            </select>
+              options={rates}
+              onChange={setBaseCurrency}
+            />
           </div>
 
-          <div className='bg-black text-white rounded-xl p-2'>
+          <p><SiConvertio /></p>
+
+          <div className='bg-black text-white rounded-xl p-2 flex items-center justify-center flex-row'>
             <input
               className='px-2 me-2 focus:outline-none'
               type="number"
@@ -85,21 +79,11 @@ function Currency() {
                 setLastChanged('target');
               }}
             />
-            <select
+            <CurrencyDropdown
               value={targetCurrency}
-              className='max-h-32 overflow-y-auto border border-gray-300 rounded px-3 py-2 bg-black '
-              onChange={(e) => {
-                setTargetCurrency(e.target.value);
-                // Ensure the lastChanged stays relevant
-                if (lastChanged === 'base') {
-                  setTargetAmount((baseAmount * rates[e.target.value] / rates[targetCurrency]).toFixed(2));
-                }
-              }}
-            >
-              {Object.keys(rates).map((currency) => (
-                <option key={currency} value={currency}>{currency}</option>
-              ))}
-            </select>
+              options={rates}
+              onChange={setTargetCurrency}
+            />
           </div>
 
           {baseAmount && targetAmount && (
