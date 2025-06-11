@@ -67,7 +67,7 @@ function Currency() {
             />
           </div>
 
-          <p><SiConvertio /></p>
+          <SiConvertio className="w-10 h-10" />
 
           <div className='bg-black text-white rounded-xl p-2 flex items-center justify-center flex-row'>
             <input
