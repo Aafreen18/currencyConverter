@@ -47,7 +47,7 @@ function Currency() {
 
       <div className='min-h-screen flex items-center justify-center'>
         <div className='w-[400px] h-[400px] bg-gray-200 rounded-lg shadow-2xl flex items-center justify-evenly flex-col bg-cover bg-center' 
-          style={{ backgroundImage: `url('src/assets/dbg1.svg')` }}
+          style={{ backgroundImage: `url('/dbg1.svg')` }}
           >
           <div className='bg-black text-white rounded-xl p-2 flex items-center justify-center flex-row'>
             <input
