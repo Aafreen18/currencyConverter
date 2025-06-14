@@ -1,12 +1,52 @@
-# React + Vite
+# 💱 Currency Converter 🌍
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek and real-time currency converter web application built with the latest technologies: **React 19**, **Vite**, **Tailwind CSS v4**, and **Axios**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo
 
-## Expanding the ESLint configuration
+[🔗 Click here to view the live app](#) *(Add your deployed URL here)*
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧠 About the Project
+
+**Currency Converter** allows users to:
+
+- Instantly convert **any currency to another** using real-time exchange rates.
+- Easily swap between currencies.
+- Experience a responsive, intuitive, and minimal interface optimized for usability.
+
+Whether you're a traveler, investor, or just curious, this app gets you accurate currency rates in seconds.
+
+---
+
+## 🔧 Built With
+
+| Technology      | Description                                           |
+|-----------------|-------------------------------------------------------|
+| ⚛️ React 19     | Modern UI framework for building interactive UIs     |
+| ⚡ Vite          | Lightning-fast build tool for modern web projects    |
+| 💨 Tailwind CSS v4 | Utility-first CSS framework for styling              |
+| 🔗 Axios         | Promise-based HTTP client for calling exchange APIs |
+
+---
+
+## 📁 Features
+
+- 🌐 Real-time exchange rates
+- 🔄 Bidirectional conversion (From → To and To → From)
+- 🔍 Clean and simple UI
+- 📱 Fully responsive design
+- ⚙️ Built with modular and maintainable code
+
+---
+
+## 🛠️ Installation and Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/currency-converter.git
+cd currency-converter
