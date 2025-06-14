@@ -15,7 +15,7 @@ function Currency() {
     const fetchCurrencyData = async () => {
       try {
         const response = await axios.get(
-          'https://v6.exchangerate-api.com/v6/25b6ccf225482c02b595ae98/latest/USD'
+          `https://v6.exchangerate-api.com/v6/${import.meta.env.VITE_EXCHANGE_API_KEY}/latest/USD`
         );
         setRates(response.data.conversion_rates);
       } catch (error) {
