@@ -40,18 +40,19 @@ function Currency() {
   }, [baseAmount, targetAmount, baseCurrency, targetCurrency, rates, lastChanged]);
 
   return (
-    <>
-      <h1 className="text-7xl font-medium playfair-display text-center text-black pt-10">
+    <div className="min-h-screen flex flex-col">
+      <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium playfair-display text-center text-black pt-4 sm:pt-6 md:pt-8 lg:pt-10">
         Currency Converter
       </h1>
 
-      <div className='min-h-screen flex items-center justify-center'>
-        <div className='w-[400px] h-[400px] bg-gray-200 rounded-lg shadow-2xl flex items-center justify-evenly flex-col bg-cover bg-center' 
+      <div className="flex-1 flex items-center justify-center px-2 sm:px-4 md:px-6 pb-10 sm:pb-16">
+        <div
+          className='w-full max-w-sm h-[400px] bg-gray-200 rounded-lg shadow-2xl flex items-center justify-evenly flex-col bg-cover bg-center'
           style={{ backgroundImage: `url('/dbg1.svg')` }}
-          >
+        >
           <div className='bg-black text-white rounded-xl p-2 flex items-center justify-center flex-row'>
             <input
-              className='px-2 me-2 focus:outline-none'
+              className='px-2 me-2 focus:outline-none w-24 sm:w-auto'
               type="number"
               value={baseAmount}
               onChange={(e) => {
@@ -71,7 +72,7 @@ function Currency() {
 
           <div className='bg-black text-white rounded-xl p-2 flex items-center justify-center flex-row'>
             <input
-              className='px-2 me-2 focus:outline-none'
+              className='px-2 me-2 focus:outline-none w-24 sm:w-auto'
               type="number"
               value={targetAmount}
               onChange={(e) => {
@@ -87,15 +88,15 @@ function Currency() {
           </div>
 
           {baseAmount && targetAmount && (
-            <div className='mt-15 bg-transparent'>
-              <h2 className='bg-black text-white p-3 shadow-2xl rounded-2xl'>
+            <div className='mt-4 bg-transparent text-center px-2'>
+              <h2 className='bg-black text-white p-3 shadow-2xl rounded-2xl text-sm sm:text-base'>
                 {baseAmount} {baseCurrency} = {targetAmount} {targetCurrency}
               </h2>
             </div>
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
