@@ -40,14 +40,13 @@ function Currency() {
   }, [baseAmount, targetAmount, baseCurrency, targetCurrency, rates, lastChanged]);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <>
       <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium playfair-display text-center text-black pt-10 sm:pt-12 md:pt-16 lg:pt-20 leading-tight">
         <span className="block sm:inline">Currency</span>{' '}
         <span className="block sm:inline">Converter</span>
       </h1>
 
-
-      <div className="flex-1 flex items-center justify-center px-2 sm:px-4 md:px-6 pb-10 sm:pb-16">
+      <div className='min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8'>
         <div
           className='w-full max-w-sm h-[400px] bg-gray-200 rounded-lg shadow-2xl flex items-center justify-evenly flex-col bg-cover bg-center'
           style={{ backgroundImage: `url('/dbg1.svg')` }}
@@ -98,7 +97,7 @@ function Currency() {
           )}
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
