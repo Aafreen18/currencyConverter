@@ -3,6 +3,7 @@ import axios from 'axios';
 import CurrencyDropdown from './CurrencyDropdown';
 import { SiConvertio } from "react-icons/si";
 
+
 function Currency() {
   const [rates, setRates] = useState({});
   const [targetCurrency, setTargetCurrency] = useState('INR');
@@ -11,11 +12,15 @@ function Currency() {
   const [baseAmount, setBaseAmount] = useState(1);
   const [lastChanged, setLastChanged] = useState('base'); // 'base' or 'target'
 
+
+  let API_KEY = process.env.VITE_EXCHANGE_API_KEY;
+  API_KEY = API_KEY.replace(/"/g, '');
+
   useEffect(() => {
     const fetchCurrencyData = async () => {
       try {
         const response = await axios.get(
-          `https://v6.exchangerate-api.com/v6/${import.meta.env.VITE_EXCHANGE_API_KEY}/latest/USD`
+          `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/USD`
         );
         setRates(response.data.conversion_rates);
       } catch (error) {
