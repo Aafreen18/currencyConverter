@@ -41,18 +41,17 @@ function Currency() {
 
   return (
     <>
-      <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium playfair-display text-center text-black pt-4 sm:pt-6 md:pt-8 lg:pt-10">
+      <h1 className="text-7xl font-medium playfair-display text-center text-black pt-10">
         Currency Converter
       </h1>
 
-      <div className='min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8'>
-        <div
-          className='w-full max-w-sm h-[400px] bg-gray-200 rounded-lg shadow-2xl flex items-center justify-evenly flex-col bg-cover bg-center'
+      <div className='min-h-screen flex items-center justify-center'>
+        <div className='w-[400px] h-[400px] bg-gray-200 rounded-lg shadow-2xl flex items-center justify-evenly flex-col bg-cover bg-center' 
           style={{ backgroundImage: `url('src/assets/dbg1.svg')` }}
-        >
+          >
           <div className='bg-black text-white rounded-xl p-2 flex items-center justify-center flex-row'>
             <input
-              className='px-2 me-2 focus:outline-none w-24 sm:w-auto'
+              className='px-2 me-2 focus:outline-none'
               type="number"
               value={baseAmount}
               onChange={(e) => {
@@ -72,7 +71,7 @@ function Currency() {
 
           <div className='bg-black text-white rounded-xl p-2 flex items-center justify-center flex-row'>
             <input
-              className='px-2 me-2 focus:outline-none w-24 sm:w-auto'
+              className='px-2 me-2 focus:outline-none'
               type="number"
               value={targetAmount}
               onChange={(e) => {
@@ -88,8 +87,8 @@ function Currency() {
           </div>
 
           {baseAmount && targetAmount && (
-            <div className='mt-4 bg-transparent text-center px-2'>
-              <h2 className='bg-black text-white p-3 shadow-2xl rounded-2xl text-sm sm:text-base'>
+            <div className='mt-15 bg-transparent'>
+              <h2 className='bg-black text-white p-3 shadow-2xl rounded-2xl'>
                 {baseAmount} {baseCurrency} = {targetAmount} {targetCurrency}
               </h2>
             </div>
