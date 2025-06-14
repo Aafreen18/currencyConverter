@@ -15,8 +15,8 @@ export default function CurrencyDropdown({
         setIsOpen(false);
       }
     };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener('click', handleClickOutside);
+  return () => document.removeEventListener('click', handleClickOutside);
   }, []);
 
   const handleSelect = (currency) => {
@@ -46,7 +46,7 @@ export default function CurrencyDropdown({
 
       {/* Dropdown options */}
       {isOpen && (
-        <div className="absolute z-10 mt-1 w-full bg-black border border-gray-300 rounded shadow-lg overflow-hidden">
+        <div className="absolute z-50 mt-1 w-full bg-black border border-gray-300 rounded shadow-lg overflow-hidden">
           <div className="max-h-[200px] overflow-y-auto">
             {Object.keys(options).map((currency) => (
               <div
