@@ -1,5 +1,5 @@
-import Currency from "./currency"
-import './app.css'
+import Currency from './Currency'
+import './App.css'
 function App() { 
   return (
     <>
