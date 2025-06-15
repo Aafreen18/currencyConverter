@@ -6,7 +6,7 @@ A sleek and real-time currency converter web application built with the latest t
 
 ## 🚀 Live Demo
 
-[🔗 Click here to view the live app](#) *(Add your deployed URL here)*
+🔗https://rateswitch.netlify.app/ 
 
 ---
 
